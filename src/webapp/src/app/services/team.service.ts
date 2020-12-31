@@ -8,8 +8,9 @@ import { NflTeams } from '../models/team.model';
 })
 export class TeamService {
 
-  constructor(private http: HttpClient,
-              private baseUrl = 'https://localhost:5001') { }
+  private baseUrl = 'https://localhost:5001';
+
+  constructor(private http: HttpClient) { }
 
   getTeams(): Observable<NflTeams> {
     return this.http.get<NflTeams>(this.baseUrl + '/api/teams');

@@ -1,0 +1,9 @@
+
+<div *ngIf="(nfl$ | async) as nfl">
+
+    <ul *ngFor="let team of nfl.teams">
+        <li> {{team.code}} </li>
+    </ul>
+
+
+</div>
