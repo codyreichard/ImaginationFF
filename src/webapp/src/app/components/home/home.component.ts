@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GameinfoService } from 'src/app/services/gameinfo.service';
+import { GameInfo } from 'src/app/models/gameinfo.model';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  gameInfo$: Observable<Map<string, GameInfo>>;
+
+  constructor(private gameInfoService: GameinfoService) { }
 
   ngOnInit(): void {
+    this.gameInfo$ = this.gameInfoService.getGamesInfo();
+
+    this.gameInfo$.subscribe(gameInfo => console.log(gameInfo));
   }
 
 }

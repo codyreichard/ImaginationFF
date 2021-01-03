@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="content" *ngIf="(gameInfo$ | async) as gameInfo" fxLayout="row wrap" fxLayoutGap="16px grid">
+
+    <div *ngFor="let singleGame of gameInfo | keyvalue" fxFlex="25%">
+      <mat-card>
+        <mat-card-title> {{singleGame.value.away.abbr + ' @ ' + singleGame.value.home.abbr}} </mat-card-title>
+
+        <span> {{'Quarter: ' + singleGame.value.qtr + ' -- ' + singleGame.value.clock}} </span>
+        <span> {{'possession: ' + singleGame.value.posteam}}</span>
+        <span> {{'Down: ' + singleGame.value.down + ' Yards to go: ' + singleGame.value.yardsTogo }} </span>
+        <span> {{'Score: ' + (singleGame.value.away.score.total === null ? 0 : singleGame.value.away.score.total) + ' '
+                + (singleGame.value.home.score.total === null ? 0 : singleGame.value.home.score.total) }} </span>
+
+
+        <app-top-fantasy-player> </app-top-fantasy-player>
+      </mat-card>
+
+  </div>
+</div>

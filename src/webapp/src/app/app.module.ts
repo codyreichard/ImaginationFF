@@ -8,6 +8,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,13 +17,16 @@ import { AppComponent } from './app.component';
 import { TeamComponent } from './components/team/team.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TopFantasyPlayerComponent } from './components/top-fantasy-player/top-fantasy-player.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    TopFantasyPlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,9 @@ import { HeaderComponent } from './components/header/header.component';
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    BrowserAnimationsModule
+    MatCardModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
