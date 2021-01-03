@@ -32,9 +32,9 @@ speed-measure-plugin*.json
 .history/*
 
 # IDE - Visual Studio
-src/FFWidgetService/obj/*
-src/FFWidgetService/bin/*
-src/FFWidgetService/.vs/*
+src/FFWidgetService/FFWidgetService/obj/*
+src/FFWidgetService/FFWidgetService/bin/*
+src/FFWidgetService/FFWidgetService/.vs/*
 
 # misc
 /.sass-cache
