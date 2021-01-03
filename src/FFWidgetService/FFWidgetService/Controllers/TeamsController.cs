@@ -31,5 +31,18 @@ namespace FFWidgetService.Controllers
 
       return teams;
     }
+
+    // GET: api/values
+    [HttpGet("livescores")]
+    public async Task<Dictionary<string, GameInfo>> GetLiveScores()
+    {
+      var httpClient = new HttpClient();
+      var task = await httpClient.GetAsync("http://static.nfl.com/liveupdate/scores/scores.json");
+      var jsonString = await task.Content.ReadAsStringAsync();
+
+      var scoresInfo = GameInfo.FromJson(jsonString);
+
+      return scoresInfo;
+    }
   }
 }
